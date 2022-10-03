@@ -27,3 +27,4 @@ class Mentor:
             return 'Ошибка'
 
 tito = Mentor('tito', 'alex')
+
