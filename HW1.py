@@ -83,66 +83,66 @@ student1.add_prog_courses('Python')
 student1.add_prog_courses('Git')
 student1.add_fin_courses('Введение в программирование')
 student2 = Student('Gina', 'Adamson', 'woman')
-student2.add_prog_courses('JavaScript')
-student2.add_prog_courses('html')
+student2.add_prog_courses('Python')
+student2.add_prog_courses ('Git')
 student2.add_fin_courses('Английский для программистов')
 lecturer1 = Lecturer('Василий', 'Иванов')
 lecturer1.add_courses('Python')
 lecturer1.add_courses('Git')
 lecturer2 = Lecturer('Иван', 'Абрамов')
-lecturer2.add_courses('JavaScript')
-lecturer2.add_courses('html')
+lecturer2.add_courses('Python')
+lecturer2.add_courses ('Git')
 reviewer1 = Reviewer('Анна', 'Петрова')
 reviewer1.add_courses('Python')
 reviewer1.add_courses('Git')
 reviewer2 = Reviewer('Екатерина', 'Кротова')
-reviewer2.add_courses('JavaScript')
-reviewer2.add_courses('html')
+reviewer2.add_courses('Python')
+reviewer2.add_courses ('Git')
 reviewer1.rate_hw(student1, 'Python', 7)
 reviewer1.rate_hw(student1, 'Git', 8)
 reviewer1.rate_hw(student1, 'Python', 10)
 reviewer1.rate_hw(student1, 'Git', 4)
-reviewer2.rate_hw(student2, 'JavaScript', 6)
-reviewer2.rate_hw(student2, 'html', 10)
-reviewer2.rate_hw(student2, 'JavaScript', 9)
-reviewer2.rate_hw(student2, 'html', 7)
+reviewer2.rate_hw(student2, 'Python', 6)
+reviewer2.rate_hw(student2, 'Git', 10)
+reviewer2.rate_hw(student2, 'Python', 9)
+reviewer2.rate_hw(student2, 'Git', 7)
 student1.rate_lecture(lecturer1, 'Python', 10)
 student1.rate_lecture(lecturer1, 'Python', 7)
 student1.rate_lecture(lecturer1, 'Git', 8)
 student1.rate_lecture(lecturer1, 'Git', 10)
-student2.rate_lecture(lecturer2, 'JavaScript', 9)
-student2.rate_lecture(lecturer2, 'JavaScript', 6)
-student2.rate_lecture(lecturer2, 'html', 10)
-student2.rate_lecture(lecturer2, 'html', 7)
-# print(student1.stud_av())
-# print(student2.stud_av())
-# print(student1)
-# print(student2)
-# print(lecturer1)
-# print(lecturer2)
-# print(reviewer1)
-# print(reviewer2)
-# print(student1 < lecturer1)
-# print(student2 > lecturer2)
+student2.rate_lecture(lecturer2, 'Python', 9)
+student2.rate_lecture(lecturer2, 'Python', 6)
+student2.rate_lecture(lecturer2, 'Git', 10)
+student2.rate_lecture(lecturer2, 'Git', 7)
+print(student1.stud_av())
+print(student2.stud_av())
+print(student1)
+print(student2)
+print(lecturer1)
+print(lecturer2)
+print(reviewer1)
+print(reviewer2)
+print(student1 < lecturer1)
+print(student2 > lecturer2)
 students_list = [student1, student2]
 def grade_av(students_list, course):
-    sum = 0
+    sum_ = 0
     count = 0
-    for x in students_list:
-        for y in x.grades[course]:
-            sum += y
+    for self in students_list:
+        for value in self.grades[course]:
+            sum_ += value
             count += 1
-    return round(sum/count, 1)
+    return round(sum_/count, 1)
 
 lecturers_list = [lecturer1, lecturer2]
-def rating_al(lecturers_list, course):
-    sum = 0
+def grade_lec_av(lecturers_list, course):
+    sum_ = 0
     count = 0
-    for x in lecturers_list:
-        for y in x.grades1[course]:
-            sum += y
+    for self in lecturers_list:
+        for value in self.grades[course]:
+            sum_ += value
             count += 1
-    return round(sum/count, 1)
+    return round(sum_/count, 1)
 
 print(grade_av(students_list, 'Python'))
-print(rating_al(lecturers_list, 'Python'))
+print(grade_lec_av(lecturers_list, 'Git'))
